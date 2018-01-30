@@ -1,0 +1,20 @@
+<h2>
+    Hae pysäkin reitit
+</h2>
+
+<ul>
+    <li *ngFor="let reitti of reittiTaulukko">
+        <h4>{{reitti.name}}</h4>
+        <p>{{reitti.route.longName}}</p>
+        {{ lat }}
+        {{ lon }}
+    </li>
+</ul>
+
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lon" [zoom]="18" [styles]="">
+    <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+</agm-map>
