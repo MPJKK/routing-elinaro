@@ -1,10 +1,19 @@
 <nav>
   <ul>
     <li>
-      <a [routerLink]="['']">HAKU</a>
+      <a [routerLink]="['']"><mat-icon>search</mat-icon></a>
     </li>
     <li>
-      <a [routerLink]="['routes']">REITIT</a>
+      <a [routerLink]="['routes']"><mat-icon>train</mat-icon></a>
     </li>
   </ul>
+</nav>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.path"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
 </nav>

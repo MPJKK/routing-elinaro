@@ -1,20 +1,25 @@
-<h2>
-    Hae pysäkin reitit
-</h2>
+
+
+<div fxLayout="row"></div>
 
 <ul>
+    <h2>
+        Pysäkin reitit
+    </h2>
     <li *ngFor="let reitti of reittiTaulukko">
         <h4>{{reitti.name}}</h4>
         <p>{{reitti.route.longName}}</p>
         {{ lat }}
         {{ lon }}
+        <p> {{reitti.directionId | routeDirection }} {{ reitti.route.longName }}</p>
     </li>
 </ul>
+<div fxFlex>
+    <h1>{{ title }}</h1>
 
-<h1>{{ title }}</h1>
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lon" [zoom]="18" [styles]="">
-    <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
-</agm-map>
+    <!-- this creates a google map on the page with the given lat/lng from -->
+    <!-- the component as the initial center of the map: -->
+    <agm-map [latitude]="lat" [longitude]="lon" [zoom]="18">
+        <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+    </agm-map>
+</div>

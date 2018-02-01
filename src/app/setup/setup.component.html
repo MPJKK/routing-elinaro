@@ -1,6 +1,8 @@
 <h1>Kirjoita pysäkin nimi:</h1>
-<input [(ngModel)]="digitransitService.pysakki">
-<button (click)="naytaPysakki()">Hae</button>
+<mat-form-field>
+<input matInput [(ngModel)]="digitransitService.pysakki" placeholder="stop name">
+</mat-form-field>
+<button  mat-fab (click)="naytaPysakki()">Hae</button>
 
 <p>
     {{digitransitService.pysakki}}

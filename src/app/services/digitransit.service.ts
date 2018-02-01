@@ -16,6 +16,7 @@ export class DigitransitService {
                       name
                       lat
                       lon
+                      code
                       patterns {
                         name
                         route {

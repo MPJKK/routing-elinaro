@@ -12,20 +12,40 @@ import {DigitransitService} from './services/digitransit.service';
 import {FormsModule} from '@angular/forms';
 
 import {AgmCoreModule} from '@agm/core';
+import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {
+    MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule,
+    MatTabsModule
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
     declarations: [
         AppComponent,
         SetupComponent,
         RoutesComponent,
-        TopBarComponent
+        TopBarComponent,
+        RouteDirectionPipe,
 
     ],
     imports: [
         BrowserModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        MatListModule,
+        FlexLayoutModule,
+        MatTabsModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
+        MatListModule,
+        MatExpansionModule,
+        MatIconModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyCo-hgadMZhDbru2L3XSRsfMETAJCJMnaE'
 
